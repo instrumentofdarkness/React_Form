@@ -1,6 +1,7 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-import SearchForm from "./components/form/SearchForm";
+import SearchFormProduct from "./components/form/SearchFormProduct";
+import NameEntry from "./components/form/NameEntry";
 
 const productList = [
   {
@@ -111,10 +112,24 @@ const productList = [
   },
 ];
 function App() {
+  // write the logic to change the state of the search term
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // write the logic to filter the products based on the search term
+  // and display the products that match the search term
+  // in the SearchFormProduct component
+
+ const filteredProducts = productList.filter((product) => {
+  return product.title.toLowerCase().includes
+  (searchTerm.toLowerCase())  
+  });
   return (
     <div className="App">
-      <h1> React hook assignment </h1>
-      <SearchForm productList={productList} />
+      <h1> React useState hook & onChange assignment </h1>
+      <SearchFormProduct setSearchTerm={setSearchTerm} />
+      <br />
+      <NameEntry />
     </div>
   );
 }
