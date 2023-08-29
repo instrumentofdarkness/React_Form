@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import SearchForm from "./components/form/SearchForm";
 
 const productList = [
   {
@@ -113,6 +114,7 @@ function App() {
   return (
     <div className="App">
       <h1> React hook assignment </h1>
+      <SearchForm productList={productList} />
     </div>
   );
 }
