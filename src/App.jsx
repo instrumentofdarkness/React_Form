@@ -113,6 +113,7 @@ const productList = [
   },
 ];
 function App() {
+  const [products, setProducts] = useState(productList);
   // write the logic to change the state of the search term
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -121,8 +122,8 @@ function App() {
   // and display the products that match the search term
   // in the SearchFormProduct component
 
-  const filteredProducts = productList.filter((product) => {
-    return product.title.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredProducts = productList.filter((item) => {
+    return item.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
   return (
     <div className="App">

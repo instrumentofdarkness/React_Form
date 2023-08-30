@@ -6,12 +6,12 @@ export default function ProductList({
   searchTerm,
   filteredProducts,
 }) {
-  if ({ searchTerm }) {
+  if (!searchTerm) {
     return (
       <div>
         <h1>Product list</h1>
-        {productList.map((product) => {
-          <ProductItem key={product.id} product={product} />;
+        {productList.map((item) => {
+          return <ProductItem key={item.id} product={item} />;
         })}
       </div>
     );
@@ -20,9 +20,9 @@ export default function ProductList({
   return (
     <div>
       <h1>Product list</h1>
-      {filteredProducts.map((product) => {
-        <ProductItem key={product.id} product={product} />;
-      })}
+      {filteredProducts.map((item) => (
+        <ProductItem key={item.id} product={item} />
+      ))}
     </div>
   );
 }
