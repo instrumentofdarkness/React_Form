@@ -127,13 +127,12 @@ function App() {
   return (
     <div className="App">
       <h1> React useState hook & onChange assignment </h1>
+      <SearchFormProduct setSearchTerm={setSearchTerm} />
       <ProductList
         productList={productList}
         searchTerm={searchTerm}
         filteredProducts={filteredProducts}
       />
-      <SearchFormProduct setSearchTerm={setSearchTerm} />
-
       <br />
       <NameEntry />
     </div>
