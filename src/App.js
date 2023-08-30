@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import SearchFormProduct from "./components/form/SearchFormProduct";
+import SearchFormProduct from "./components/userInput/SearchFormProduct";
 import NameEntry from "./components/form/NameEntry";
+import ProductList from "./components/product/ProductList";
 
 const productList = [
   {
@@ -120,14 +121,19 @@ function App() {
   // and display the products that match the search term
   // in the SearchFormProduct component
 
- const filteredProducts = productList.filter((product) => {
-  return product.title.toLowerCase().includes
-  (searchTerm.toLowerCase())  
+  const filteredProducts = productList.filter((product) => {
+    return product.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
   return (
     <div className="App">
       <h1> React useState hook & onChange assignment </h1>
+      <ProductList
+        productList={productList}
+        searchTerm={searchTerm}
+        filteredProducts={filteredProducts}
+      />
       <SearchFormProduct setSearchTerm={setSearchTerm} />
+
       <br />
       <NameEntry />
     </div>
